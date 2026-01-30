@@ -1,19 +1,30 @@
 from django.conf import settings
 from django.http import JsonResponse
 
+from bookmarks.context_processors import get_effective_theme
+
+# Catppuccin theme_color (Mauve) and background_color per flavor
+THEME_COLORS = {
+    "latte": {"theme_color": "#8839ef", "background_color": "#eff1f5"},
+    "frappe": {"theme_color": "#ca9ee6", "background_color": "#303446"},
+    "macchiato": {"theme_color": "#c6a0f6", "background_color": "#24273a"},
+    "mocha": {"theme_color": "#cba6f7", "background_color": "#1e1e2e"},
+    "auto": {"theme_color": "#8839ef", "background_color": "#eff1f5"},
+}
+
 
 def manifest(request):
+    effective = get_effective_theme(request)
+    colors = THEME_COLORS.get(effective, THEME_COLORS["auto"])
     response = {
-        "short_name": "linkding",
-        "name": "linkding",
+        "short_name": "links expert",
+        "name": "links expert",
         "description": "Self-hosted bookmark service",
         "start_url": "bookmarks",
         "display": "standalone",
         "scope": "/" + settings.LD_CONTEXT_PATH,
-        "theme_color": "#5856e0",
-        "background_color": (
-            "#161822" if request.user_profile.theme == "dark" else "#ffffff"
-        ),
+        "theme_color": colors["theme_color"],
+        "background_color": colors["background_color"],
         "icons": [
             {
                 "src": "/" + settings.LD_CONTEXT_PATH + "static/logo.svg",

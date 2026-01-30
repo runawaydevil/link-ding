@@ -6,33 +6,43 @@
     <title>Reader view</title>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0, minimal-ui">
-    {# Include specific theme variant based on user profile setting #}
-    {% if request.user_profile.theme == 'light' %}
-      <link href="{% static 'theme-light.css' %}?v={{ app_version }}"
+    {# Theme: effective_theme (latte, frappe, macchiato, mocha, auto) - Catppuccin #}
+    {% if effective_theme == 'latte' %}
+      <link href="{% static 'theme-latte.css' %}?v={{ app_version }}"
             rel="stylesheet"
             type="text/css" />
-      <meta name="theme-color" content="#5856e0">
-    {% elif request.user_profile.theme == 'dark' %}
-      <link href="{% static 'theme-dark.css' %}?v={{ app_version }}"
+      <meta name="theme-color" content="#eff1f5">
+    {% elif effective_theme == 'frappe' %}
+      <link href="{% static 'theme-frappe.css' %}?v={{ app_version }}"
             rel="stylesheet"
             type="text/css" />
-      <meta name="theme-color" content="#161822">
+      <meta name="theme-color" content="#303446">
+    {% elif effective_theme == 'macchiato' %}
+      <link href="{% static 'theme-macchiato.css' %}?v={{ app_version }}"
+            rel="stylesheet"
+            type="text/css" />
+      <meta name="theme-color" content="#24273a">
+    {% elif effective_theme == 'mocha' %}
+      <link href="{% static 'theme-mocha.css' %}?v={{ app_version }}"
+            rel="stylesheet"
+            type="text/css" />
+      <meta name="theme-color" content="#1e1e2e">
     {% else %}
-      {# Use auto theme as fallback #}
-      <link href="{% static 'theme-dark.css' %}?v={{ app_version }}"
+      {# effective_theme == 'auto' #}
+      <link href="{% static 'theme-mocha.css' %}?v={{ app_version }}"
             rel="stylesheet"
             type="text/css"
             media="(prefers-color-scheme: dark)" />
-      <link href="{% static 'theme-light.css' %}?v={{ app_version }}"
+      <link href="{% static 'theme-latte.css' %}?v={{ app_version }}"
             rel="stylesheet"
             type="text/css"
             media="(prefers-color-scheme: light)" />
       <meta name="theme-color"
             media="(prefers-color-scheme: dark)"
-            content="#161822">
+            content="#1e1e2e">
       <meta name="theme-color"
             media="(prefers-color-scheme: light)"
-            content="#5856e0">
+            content="#eff1f5">
     {% endif %}
     {% if request.user_profile.custom_css %}
       <link href="{% url 'linkding:custom_css' %}?hash={{ request.user_profile.custom_css_hash }}"

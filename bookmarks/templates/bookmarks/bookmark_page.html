@@ -34,6 +34,12 @@
     </main>
     {# Filters #}
     <div class="side-panel col-1 hide-md">
+      <div class="side-panel-brand">
+        <a href="{% url 'linkding:root' %}" class="side-panel-brand-link">
+          <img class="app-logo-side" src="{% static 'linkexperts.png' %}" alt="links expert">
+          <span class="app-name-side">links expert</span>
+        </a>
+      </div>
       {% if bundles %}
         {% include 'bookmarks/bundle_section.html' %}
       {% endif %}

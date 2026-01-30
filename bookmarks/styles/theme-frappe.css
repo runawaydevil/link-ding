@@ -1,60 +1,60 @@
 @import "theme-light.css";
 
 :root {
-  /* Catppuccin Mocha palette (dark) - https://catppuccin.com */
-  --contrast-5: rgba(49, 50, 68, 0.5);
-  --contrast-10: rgba(69, 71, 90, 0.6);
-  --contrast-20: rgba(88, 91, 112, 0.7);
-  --contrast-30: rgba(108, 112, 134, 0.6);
-  --contrast-40: rgba(127, 132, 156, 0.5);
-  --contrast-50: rgba(147, 153, 178, 0.5);
-  --contrast-60: rgba(166, 173, 200, 0.4);
-  --contrast-70: rgba(186, 194, 222, 0.35);
-  --contrast-80: rgba(205, 214, 244, 0.3);
-  --contrast-90: rgba(205, 214, 244, 0.2);
+  /* Catppuccin Frappé palette (dark) - https://catppuccin.com */
+  --contrast-5: rgba(48, 52, 70, 0.5);
+  --contrast-10: rgba(65, 69, 89, 0.6);
+  --contrast-20: rgba(82, 86, 110, 0.7);
+  --contrast-30: rgba(99, 103, 131, 0.6);
+  --contrast-40: rgba(116, 120, 152, 0.5);
+  --contrast-50: rgba(133, 137, 173, 0.5);
+  --contrast-60: rgba(150, 154, 194, 0.4);
+  --contrast-70: rgba(167, 171, 215, 0.35);
+  --contrast-80: rgba(184, 188, 236, 0.3);
+  --contrast-90: rgba(198, 208, 245, 0.2);
 
-  --primary-color: #cba6f7;
-  --primary-color-highlight: #d4b4fa;
-  --primary-color-shade: rgba(203, 166, 247, 0.42);
+  --primary-color: #ca9ee6;
+  --primary-color-highlight: #dfb0f2;
+  --primary-color-shade: rgba(202, 158, 230, 0.42);
 
-  --alternative-color: #94e2d5;
-  --alternative-color-dark: #89dceb;
+  --alternative-color: #81c8be;
+  --alternative-color-dark: #85c1dc;
 
-  --success-color: #a6e3a1;
-  --success-color-highlight: #b5eab0;
-  --success-color-shade: rgba(166, 227, 161, 0.1);
+  --success-color: #a6d189;
+  --success-color-highlight: #b5e0a0;
+  --success-color-shade: rgba(166, 209, 137, 0.1);
 
-  --warning-color: #fab387;
-  --warning-color-highlight: #f9e2af;
-  --warning-color-shade: rgba(250, 179, 135, 0.1);
+  --warning-color: #e5c890;
+  --warning-color-highlight: #ef9f76;
+  --warning-color-shade: rgba(229, 200, 144, 0.1);
 
-  --error-color: #f38ba8;
-  --error-color-highlight: #f5c2e7;
-  --error-color-shade: rgba(243, 139, 168, 0.1);
+  --error-color: #e78284;
+  --error-color-highlight: #f4b8e4;
+  --error-color-shade: rgba(231, 130, 132, 0.1);
 
-  /* Core colors - Mocha */
-  --text-color: #cdd6f4;
-  --secondary-text-color: #bac2de;
-  --tertiary-text-color: #a6adc8;
-  --contrast-text-color: #1e1e2e;
-  --primary-text-color: #cba6f7;
+  /* Core colors - Frappé */
+  --text-color: #c6d0f5;
+  --secondary-text-color: #b5bfe2;
+  --tertiary-text-color: #a5adce;
+  --contrast-text-color: #303446;
+  --primary-text-color: #ca9ee6;
 
   --link-color: var(--primary-text-color);
-  --secondary-link-color: rgba(203, 166, 247, 0.8);
+  --secondary-link-color: rgba(202, 158, 230, 0.8);
 
   --icon-color: var(--text-color);
 
-  --border-color: #45475a;
-  --secondary-border-color: #313244;
+  --border-color: #51576d;
+  --secondary-border-color: #414559;
 
-  --body-color: #1e1e2e;
-  --body-color-contrast: #181825;
+  --body-color: #303446;
+  --body-color-contrast: #292c3c;
 
   /* Focus */
-  --focus-outline: 2px solid #cba6f7;
+  --focus-outline: 2px solid #ca9ee6;
   --focus-outline-offset: 2px;
 
-  /* Shadows - Mocha (minimal) */
+  /* Shadows - Frappé (minimal) */
   --box-shadow-xs: none;
   --box-shadow: none;
   --box-shadow-lg: none;
@@ -73,7 +73,7 @@
   --checkbox-checked-bg-color: var(--primary-color);
   --checkbox-disabled-bg-color: var(--contrast-30);
   --checkbox-border-color: var(--border-color);
-  --checkbox-icon-color: #1e1e2e;
+  --checkbox-icon-color: #303446;
 
   --switch-bg-color: var(--contrast-10);
   --switch-border-color: var(--border-color);
@@ -106,15 +106,15 @@
 }
 
 :root {
-  --modal-overlay-bg-color: rgba(17, 17, 27, 0.75);
-  --modal-container-bg-color: #313244;
+  --modal-overlay-bg-color: rgba(35, 38, 52, 0.75);
+  --modal-container-bg-color: #414559;
   --modal-container-border-color: var(--border-color);
   --modal-border-radius: var(--border-radius-lg);
   --modal-box-shadow: none;
 }
 
 :root {
-  --menu-bg-color: #313244;
+  --menu-bg-color: #414559;
   --menu-border-color: var(--border-color);
   --menu-border-radius: var(--border-radius);
   --menu-box-shadow: none;

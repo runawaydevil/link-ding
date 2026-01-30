@@ -10,7 +10,7 @@ COPY bookmarks/styles ./bookmarks/styles
 RUN npm run build
 
 
-FROM python:3.13.7-slim-trixie AS build-deps
+FROM python:3.13-slim AS build-deps
 # Add required packages
 # build-essential pkg-config: build Python packages from source
 # libpq-dev: build Postgres client from source
@@ -46,10 +46,10 @@ RUN wget https://www.sqlite.org/${SQLITE_RELEASE_YEAR}/sqlite-amalgamation-${SQL
     gcc -fPIC -shared icu.c `pkg-config --libs --cflags icu-uc icu-io` -o libicu.so
 
 
-FROM python:3.13.7-slim-trixie AS linkding
-LABEL org.opencontainers.image.source="https://github.com/sissbruecker/linkding"
+FROM python:3.13-slim AS linkding
+LABEL org.opencontainers.image.source="https://github.com/runawaydevil/link-ding"
 # install runtime dependencies
-RUN apt-get update && apt-get -y install media-types libpq-dev libicu-dev libssl3t64 curl
+RUN apt-get update && apt-get -y install media-types libpq-dev libicu-dev libssl3 curl
 WORKDIR /etc/linkding
 # copy python dependencies
 COPY --from=build-deps /etc/linkding/.venv /etc/linkding/.venv

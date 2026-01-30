@@ -24,11 +24,7 @@
           </form>
         </div>
       {% endif %}
-      <div class="d-flex justify-between">
-        <a href="{% url 'linkding:root' %}" class="app-link d-flex align-center">
-          <img class="app-logo" src="{% static 'logo.png' %}" alt="Application logo">
-          <span class="app-name">LINKDING</span>
-        </a>
+      <div class="d-flex justify-end">
         <nav>
           {% if request.user.is_authenticated %}
             {# Only show nav items menu when logged in #}
@@ -43,6 +39,9 @@
     <div class="content container">
       {% block content %}{% endblock %}
     </div>
+    <footer class="app-footer container">
+      developed by <a href="mailto:runawaydevil@pm.me">runawaydevil</a> - 2026
+    </footer>
     <div class="modals">
       {% block overlays %}{% endblock %}
     </div>

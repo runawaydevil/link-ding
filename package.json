@@ -1,10 +1,14 @@
 {
   "name": "linkding",
   "scripts": {
-    "build": "npm run build-js && npm run build-theme-light && npm run build-theme-dark",
+    "build": "npm run build-js && npm run build-theme-light && npm run build-theme-dark && npm run build-theme-latte && npm run build-theme-frappe && npm run build-theme-macchiato && npm run build-theme-mocha",
     "build-js": "rollup -c",
     "build-theme-light": "postcss -o bookmarks/static/theme-light.css bookmarks/styles/theme-light.css",
     "build-theme-dark": "postcss -o bookmarks/static/theme-dark.css bookmarks/styles/theme-dark.css",
+    "build-theme-latte": "postcss -o bookmarks/static/theme-latte.css bookmarks/styles/theme-latte.css",
+    "build-theme-frappe": "postcss -o bookmarks/static/theme-frappe.css bookmarks/styles/theme-frappe.css",
+    "build-theme-macchiato": "postcss -o bookmarks/static/theme-macchiato.css bookmarks/styles/theme-macchiato.css",
+    "build-theme-mocha": "postcss -o bookmarks/static/theme-mocha.css bookmarks/styles/theme-mocha.css",
     "dev": "rollup -c -w"
   },
   "dependencies": {

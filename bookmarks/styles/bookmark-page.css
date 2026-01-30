@@ -44,6 +44,37 @@
   }
 }
 
+/* Side panel brand logo */
+.side-panel .side-panel-brand {
+  margin-bottom: var(--unit-6);
+}
+
+.side-panel .side-panel-brand-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none;
+  color: var(--primary-text-color);
+}
+
+.side-panel .side-panel-brand-link:hover {
+  text-decoration: none;
+  color: var(--primary-text-color);
+}
+
+.side-panel .app-logo-side {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin-bottom: var(--unit-2);
+}
+
+.side-panel .app-name-side {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
 /* Bookmark area header controls */
 .bookmarks-page .search-container {
   flex: 1 1 0;

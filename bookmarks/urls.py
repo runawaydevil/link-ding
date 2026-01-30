@@ -123,7 +123,7 @@ if settings.DEBUG:
 
     urlpatterns.append(path("live_reload", reload.live_reload, name="live_reload"))
 
-# Put all linkding URLs into a linkding namespace
+# Root "/" and "" are handled by LinkdingMiddleware (short-circuit); path("", include(...)) keeps reverse("linkding:root") valid.
 urlpatterns = [path("", include((urlpatterns, "linkding")))]
 
 # Auth
@@ -158,6 +158,6 @@ if settings.LD_ENABLE_OIDC:
 #    import debug_toolbar
 #    urlpatterns.append(path("__debug__/", include(debug_toolbar.urls)))
 
-# Context path
-if settings.LD_CONTEXT_PATH:
+# Context path (only when non-root; root "/" is handled by middleware normalizing path to "")
+if settings.LD_CONTEXT_PATH and settings.LD_CONTEXT_PATH.strip("/"):
     urlpatterns = [path(settings.LD_CONTEXT_PATH, include(urlpatterns))]

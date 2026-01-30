@@ -9,14 +9,14 @@ class MetadataViewTestCase(TestCase):
 
         response_body = response.json()
         expected_body = {
-            "short_name": "linkding",
-            "name": "linkding",
+            "short_name": "links expert",
+            "name": "links expert",
             "description": "Self-hosted bookmark service",
             "start_url": "bookmarks",
             "display": "standalone",
             "scope": "/",
-            "theme_color": "#5856e0",
-            "background_color": "#ffffff",
+            "theme_color": "#8839ef",
+            "background_color": "#eff1f5",
             "icons": [
                 {
                     "src": "/static/logo.svg",
@@ -98,6 +98,15 @@ class MetadataViewTestCase(TestCase):
         }
         self.assertDictEqual(response_body, expected_body)
 
+    @override_settings(LD_THEME="mocha")
+    def test_manifest_respects_ld_theme(self):
+        """When LD_THEME is set, manifest uses that theme's colors."""
+        response = self.client.get("/manifest.json")
+        self.assertEqual(response.status_code, 200)
+        body = response.json()
+        self.assertEqual(body["theme_color"], "#cba6f7")
+        self.assertEqual(body["background_color"], "#1e1e2e")
+
     @override_settings(LD_CONTEXT_PATH="linkding/")
     def test_manifest_respects_context_path(self):
         response = self.client.get("/manifest.json")
@@ -106,14 +115,14 @@ class MetadataViewTestCase(TestCase):
 
         response_body = response.json()
         expected_body = {
-            "short_name": "linkding",
-            "name": "linkding",
+            "short_name": "links expert",
+            "name": "links expert",
             "description": "Self-hosted bookmark service",
             "start_url": "bookmarks",
             "display": "standalone",
             "scope": "/linkding/",
-            "theme_color": "#5856e0",
-            "background_color": "#ffffff",
+            "theme_color": "#8839ef",
+            "background_color": "#eff1f5",
             "icons": [
                 {
                     "src": "/linkding/static/logo.svg",

@@ -55,10 +55,10 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "bookmarks.middlewares.LinkdingMiddleware",
+    "django.middleware.common.CommonMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.locale.LocaleMiddleware",
@@ -79,6 +79,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "bookmarks.context_processors.toasts",
                 "bookmarks.context_processors.app_version",
+                "bookmarks.context_processors.effective_theme",
             ],
         },
     },
@@ -106,8 +107,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Website context path.
-LD_CONTEXT_PATH = os.getenv("LD_CONTEXT_PATH", "")
+# Website context path. Treat root "/" as no context path so we never get "//" in LOGIN_URL, STATIC_URL, etc.
+_raw_context = (os.getenv("LD_CONTEXT_PATH", "") or "").strip()
+LD_CONTEXT_PATH = (
+    ""
+    if not _raw_context or _raw_context == "/"
+    else _raw_context.rstrip("/") + "/"
+)
 
 LOGIN_URL = "/" + LD_CONTEXT_PATH + "login"
 LOGIN_REDIRECT_URL = "/" + LD_CONTEXT_PATH + "bookmarks"
@@ -190,6 +196,11 @@ LD_DISABLE_LOGIN_FORM = os.getenv("LD_DISABLE_LOGIN_FORM", False) in (
 
 # Enable OICD support if configured
 LD_ENABLE_OIDC = os.getenv("LD_ENABLE_OIDC", False) in (True, "True", "true", "1")
+
+# Theme: latte (light), frappe, macchiato, mocha (dark), or auto (system). Empty = use user profile (light→latte, dark→mocha, auto→auto).
+_raw_ld_theme = os.getenv("LD_THEME", "").strip().lower()
+LD_THEME_VALID = frozenset({"", "latte", "frappe", "macchiato", "mocha", "auto"})
+LD_THEME = _raw_ld_theme if _raw_ld_theme in LD_THEME_VALID else ""
 
 AUTHENTICATION_BACKENDS = ["django.contrib.auth.backends.ModelBackend"]
 

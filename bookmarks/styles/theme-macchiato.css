@@ -1,60 +1,60 @@
 @import "theme-light.css";
 
 :root {
-  /* Catppuccin Mocha palette (dark) - https://catppuccin.com */
-  --contrast-5: rgba(49, 50, 68, 0.5);
-  --contrast-10: rgba(69, 71, 90, 0.6);
-  --contrast-20: rgba(88, 91, 112, 0.7);
-  --contrast-30: rgba(108, 112, 134, 0.6);
-  --contrast-40: rgba(127, 132, 156, 0.5);
-  --contrast-50: rgba(147, 153, 178, 0.5);
-  --contrast-60: rgba(166, 173, 200, 0.4);
-  --contrast-70: rgba(186, 194, 222, 0.35);
-  --contrast-80: rgba(205, 214, 244, 0.3);
+  /* Catppuccin Macchiato palette (dark) - https://catppuccin.com */
+  --contrast-5: rgba(54, 58, 79, 0.5);
+  --contrast-10: rgba(73, 77, 100, 0.6);
+  --contrast-20: rgba(92, 96, 121, 0.7);
+  --contrast-30: rgba(111, 115, 142, 0.6);
+  --contrast-40: rgba(130, 134, 163, 0.5);
+  --contrast-50: rgba(149, 153, 184, 0.5);
+  --contrast-60: rgba(168, 172, 205, 0.4);
+  --contrast-70: rgba(187, 191, 226, 0.35);
+  --contrast-80: rgba(202, 211, 245, 0.3);
   --contrast-90: rgba(205, 214, 244, 0.2);
 
-  --primary-color: #cba6f7;
+  --primary-color: #c6a0f6;
   --primary-color-highlight: #d4b4fa;
-  --primary-color-shade: rgba(203, 166, 247, 0.42);
+  --primary-color-shade: rgba(198, 160, 246, 0.42);
 
-  --alternative-color: #94e2d5;
-  --alternative-color-dark: #89dceb;
+  --alternative-color: #8bd5ca;
+  --alternative-color-dark: #7dc4e4;
 
-  --success-color: #a6e3a1;
-  --success-color-highlight: #b5eab0;
-  --success-color-shade: rgba(166, 227, 161, 0.1);
+  --success-color: #a6da95;
+  --success-color-highlight: #b5e8a4;
+  --success-color-shade: rgba(166, 218, 149, 0.1);
 
-  --warning-color: #fab387;
+  --warning-color: #f5a97f;
   --warning-color-highlight: #f9e2af;
-  --warning-color-shade: rgba(250, 179, 135, 0.1);
+  --warning-color-shade: rgba(245, 169, 127, 0.1);
 
-  --error-color: #f38ba8;
+  --error-color: #ed8796;
   --error-color-highlight: #f5c2e7;
-  --error-color-shade: rgba(243, 139, 168, 0.1);
+  --error-color-shade: rgba(237, 135, 150, 0.1);
 
-  /* Core colors - Mocha */
-  --text-color: #cdd6f4;
-  --secondary-text-color: #bac2de;
-  --tertiary-text-color: #a6adc8;
-  --contrast-text-color: #1e1e2e;
-  --primary-text-color: #cba6f7;
+  /* Core colors - Macchiato */
+  --text-color: #cad3f5;
+  --secondary-text-color: #b8c0e0;
+  --tertiary-text-color: #a5adcb;
+  --contrast-text-color: #24273a;
+  --primary-text-color: #c6a0f6;
 
   --link-color: var(--primary-text-color);
-  --secondary-link-color: rgba(203, 166, 247, 0.8);
+  --secondary-link-color: rgba(198, 160, 246, 0.8);
 
   --icon-color: var(--text-color);
 
-  --border-color: #45475a;
-  --secondary-border-color: #313244;
+  --border-color: #494d64;
+  --secondary-border-color: #363a4f;
 
-  --body-color: #1e1e2e;
-  --body-color-contrast: #181825;
+  --body-color: #24273a;
+  --body-color-contrast: #1e2030;
 
   /* Focus */
-  --focus-outline: 2px solid #cba6f7;
+  --focus-outline: 2px solid #c6a0f6;
   --focus-outline-offset: 2px;
 
-  /* Shadows - Mocha (minimal) */
+  /* Shadows - Macchiato (minimal) */
   --box-shadow-xs: none;
   --box-shadow: none;
   --box-shadow-lg: none;
@@ -73,7 +73,7 @@
   --checkbox-checked-bg-color: var(--primary-color);
   --checkbox-disabled-bg-color: var(--contrast-30);
   --checkbox-border-color: var(--border-color);
-  --checkbox-icon-color: #1e1e2e;
+  --checkbox-icon-color: #24273a;
 
   --switch-bg-color: var(--contrast-10);
   --switch-border-color: var(--border-color);
@@ -106,15 +106,15 @@
 }
 
 :root {
-  --modal-overlay-bg-color: rgba(17, 17, 27, 0.75);
-  --modal-container-bg-color: #313244;
+  --modal-overlay-bg-color: rgba(24, 25, 38, 0.75);
+  --modal-container-bg-color: #363a4f;
   --modal-container-border-color: var(--border-color);
   --modal-border-radius: var(--border-radius-lg);
   --modal-box-shadow: none;
 }
 
 :root {
-  --menu-bg-color: #313244;
+  --menu-bg-color: #363a4f;
   --menu-border-color: var(--border-color);
   --menu-border-radius: var(--border-radius);
   --menu-box-shadow: none;

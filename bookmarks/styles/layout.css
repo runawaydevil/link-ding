@@ -10,20 +10,22 @@ body {
 
 header {
   margin-bottom: var(--unit-9);
+}
 
-  a.app-link:hover {
-    text-decoration: none;
-  }
+.app-footer {
+  margin-top: var(--unit-10);
+  padding-top: var(--unit-4);
+  font-size: var(--font-size-sm);
+  color: var(--secondary-text-color);
+  text-align: center;
+}
 
-  .app-logo {
-    width: 28px;
-    height: 28px;
-  }
+.app-footer a {
+  color: var(--link-color);
+  text-decoration: none;
+}
 
-  .app-name {
-    margin-left: var(--unit-3);
-    font-size: var(--font-size-lg);
-    font-weight: 500;
-    line-height: 1.2;
-  }
+.app-footer a:hover {
+  color: var(--primary-color-highlight);
+  text-decoration: underline;
 }
