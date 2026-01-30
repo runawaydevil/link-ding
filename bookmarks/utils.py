@@ -13,6 +13,12 @@ from django.utils import formats, timezone
 try:
     with open("version.txt") as f:
         app_version = f.read().strip("\n")
+except FileNotFoundError:
+    try:
+        from importlib.metadata import version
+        app_version = version("linkding")
+    except Exception:
+        app_version = ""
 except Exception as exc:
     logging.exception(exc)
     app_version = ""
