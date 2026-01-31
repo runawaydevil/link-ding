@@ -29,9 +29,6 @@
           {% if request.user.is_authenticated %}
             {# Only show nav items menu when logged in #}
             {% include 'shared/nav_menu.html' %}
-          {% else %}
-            {# Otherwise show login link #}
-            <a href="{% url 'login' %}" class="btn btn-link">Login</a>
           {% endif %}
         </nav>
       </div>
