@@ -11,12 +11,12 @@
   --gray-800: #6c6f85;
   --gray-900: #5c5f77;
 
-  --primary-color: #d32f2f;
-  --primary-color-highlight: #b71c1c;
-  --primary-color-shade: rgba(211, 47, 47, 0.075);
+  --primary-color: #000000;
+  --primary-color-highlight: #333333;
+  --primary-color-shade: rgba(0, 0, 0, 0.075);
 
-  --alternative-color: #179299;
-  --alternative-color-dark: #0f6b70;
+  --alternative-color: #d32f2f;
+  --alternative-color-dark: #b71c1c;
 
   --success-color: #40a02b;
   --success-color-highlight: #4cb032;
@@ -31,14 +31,14 @@
   --error-color-shade: rgba(210, 15, 57, 0.1);
 
   /* Core colors - LinkExperts */
-  --text-color: #111111;
-  --secondary-text-color: #333333;
+  --text-color: #000000;
+  --secondary-text-color: #222222;
   --tertiary-text-color: #555555;
   --contrast-text-color: #fff;
-  --primary-text-color: #d32f2f;
+  --primary-text-color: #000000;
 
   --link-color: var(--primary-text-color);
-  --secondary-link-color: rgba(211, 47, 47, 0.8);
+  --secondary-link-color: rgba(0, 0, 0, 0.8);
 
   --icon-color: var(--gray-700);
 
