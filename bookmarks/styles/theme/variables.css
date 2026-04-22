@@ -11,9 +11,9 @@
   --gray-800: #6c6f85;
   --gray-900: #5c5f77;
 
-  --primary-color: #8839ef;
-  --primary-color-highlight: #9c5cf0;
-  --primary-color-shade: rgba(136, 57, 239, 0.075);
+  --primary-color: #d32f2f;
+  --primary-color-highlight: #b71c1c;
+  --primary-color-shade: rgba(211, 47, 47, 0.075);
 
   --alternative-color: #179299;
   --alternative-color-dark: #0f6b70;
@@ -30,23 +30,23 @@
   --error-color-highlight: #e6244a;
   --error-color-shade: rgba(210, 15, 57, 0.1);
 
-  /* Core colors - Latte */
-  --text-color: #4c4f69;
-  --secondary-text-color: #5c5f77;
-  --tertiary-text-color: #6c6f85;
+  /* Core colors - LinkExperts */
+  --text-color: #111111;
+  --secondary-text-color: #333333;
+  --tertiary-text-color: #555555;
   --contrast-text-color: #fff;
-  --primary-text-color: #8839ef;
+  --primary-text-color: #d32f2f;
 
   --link-color: var(--primary-text-color);
-  --secondary-link-color: rgba(136, 57, 239, 0.8);
+  --secondary-link-color: rgba(211, 47, 47, 0.8);
 
   --icon-color: var(--gray-700);
 
-  --border-color: #bcc0cc;
-  --secondary-border-color: #ccd0da;
+  --border-color: #e0e0e0;
+  --secondary-border-color: #eeeeee;
 
-  --body-color: #eff1f5;
-  --body-color-contrast: #e6e9ef;
+  --body-color: #ffffff;
+  --body-color-contrast: #f9f9f9;
 
   /* Fonts */
   --base-font-family:
