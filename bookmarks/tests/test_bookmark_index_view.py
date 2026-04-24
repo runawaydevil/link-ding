@@ -603,6 +603,32 @@ class BookmarkIndexViewTestCase(
 
         self.assertVisibleBundles(soup, [music, tools, books])
 
+    def test_displays_decorated_heading_with_current_total(self):
+        self.setup_numbered_bookmarks(2)
+        response = self.client.get(reverse("linkding:bookmarks.index"))
+        soup = self.make_soup(response.content.decode())
+
+        heading = soup.select_one("#main-heading.section-title-decorated")
+        self.assertIsNotNone(heading)
+        self.assertEqual(
+            heading.select_one(".section-title-text").text.strip(), "Bookmarks"
+        )
+        self.assertEqual(
+            heading.select_one(".section-title-count").text.strip(), "2 links"
+        )
+
+    def test_decorated_heading_total_respects_filters(self):
+        self.setup_numbered_bookmarks(3, prefix="foo")
+        self.setup_numbered_bookmarks(2, prefix="bar")
+        response = self.client.get(reverse("linkding:bookmarks.index") + "?q=foo")
+        soup = self.make_soup(response.content.decode())
+
+        heading = soup.select_one("#main-heading.section-title-decorated")
+        self.assertIsNotNone(heading)
+        self.assertEqual(
+            heading.select_one(".section-title-count").text.strip(), "3 links"
+        )
+
     def test_list_bundles_only_shows_user_owned_bundles(self):
         user_bundles = [self.setup_bundle(), self.setup_bundle(), self.setup_bundle()]
         other_user = self.setup_user()

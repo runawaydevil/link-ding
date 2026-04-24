@@ -24,6 +24,10 @@
   <meta name="robots" content="index,follow">
   <meta name="author" content="runawaydevil">
   <title>{{ page_title|default:'links expert' }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&family=UnifrakturCook:wght@700&display=swap"
+        rel="stylesheet">
   {# Theme: effective_theme (latte, frappe, macchiato, mocha, auto) - Catppuccin #}
   {% if effective_theme == 'latte' %}
     <link href="{% static 'theme-latte.css' %}?v={{ app_version }}"

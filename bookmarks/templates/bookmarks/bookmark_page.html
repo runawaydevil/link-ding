@@ -6,7 +6,16 @@
     {# Bookmark list #}
     <main class="main col-2" aria-labelledby="main-heading">
       <div class="section-header {% if bookmark_list.bulk_edit_enabled %}mb-0{% endif %}">
-        <h1 id="main-heading">{{ bookmark_list.list_title }}</h1>
+        <h1 id="main-heading"
+            class="{% if bookmark_list.show_decorated_heading %}section-title-decorated{% endif %}">
+          {% if bookmark_list.show_decorated_heading %}
+            <span class="section-title-text">{{ bookmark_list.list_title }}</span>
+            <span class="section-title-separator" aria-hidden="true"></span>
+            <span class="section-title-count">{{ bookmark_list.bookmarks_total }} {{ bookmark_list.heading_counter_label }}</span>
+          {% else %}
+            {{ bookmark_list.list_title }}
+          {% endif %}
+        </h1>
         <div class="header-controls">
           {% bookmark_search bookmark_list.search mode=bookmark_list.search_mode %}
           {% if bookmark_list.bulk_edit_enabled %}
@@ -37,7 +46,7 @@
       <div class="side-panel-brand">
         <a href="{% url 'linkding:root' %}" class="side-panel-brand-link">
           <img class="app-logo-side" src="{% static 'linkexperts.png' %}" alt="links expert">
-          <span class="app-name-side">links expert</span>
+          <span class="app-name-side app-name-side-decorative">links expert</span>
         </a>
       </div>
       {% if bundles %}

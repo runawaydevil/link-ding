@@ -76,6 +76,44 @@
 }
 
 /* Bookmark area header controls */
+.bookmarks-page .section-title-decorated {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--unit-2);
+  min-width: 0;
+}
+
+.bookmarks-page .section-title-text {
+  font-family: var(--decorative-font-family);
+  font-size: 1.3em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.bookmarks-page .section-title-separator {
+  width: 1px;
+  height: 1.1em;
+  background: var(--secondary-border-color);
+}
+
+.bookmarks-page .section-title-count {
+  color: var(--secondary-text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.bookmarks-page .app-name-side-decorative {
+  font-family: var(--decorative-font-family);
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+}
+
 .bookmarks-page .search-container {
   flex: 1 1 0;
   display: flex;
@@ -152,6 +190,22 @@
         position: relative;
       }
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .bookmarks-page .section-title-decorated {
+    align-items: flex-start;
+    gap: var(--unit-1) var(--unit-2);
+  }
+
+  .bookmarks-page .section-title-separator {
+    display: none;
+  }
+
+  .bookmarks-page .section-title-count {
+    width: 100%;
+    white-space: normal;
   }
 }
 

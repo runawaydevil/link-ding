@@ -616,3 +616,14 @@ class BookmarkArchivedViewTestCase(
         html = response.content.decode()
 
         self.assertInHTML('<h2 id="bundles-heading">Bundles</h2>', html, count=0)
+
+    def test_archived_heading_remains_plain_without_counter(self):
+        self.setup_numbered_bookmarks(2, archived=True)
+        response = self.client.get(reverse("linkding:bookmarks.archived"))
+        soup = self.make_soup(response.content.decode())
+
+        heading = soup.select_one("#main-heading")
+        self.assertIsNotNone(heading)
+        self.assertEqual(heading.text.strip(), "Archived bookmarks")
+        self.assertIsNone(soup.select_one("#main-heading.section-title-decorated"))
+        self.assertIsNone(soup.select_one(".section-title-count"))

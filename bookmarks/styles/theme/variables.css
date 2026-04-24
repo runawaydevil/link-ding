@@ -50,7 +50,9 @@
 
   /* Fonts */
   --base-font-family:
-    -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+    "Nunito", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+  --decorative-font-family:
+    "UnifrakturCook", "Old English Text MT", "Goudy Text MT", Georgia, serif;
   --mono-font-family:
     "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace;
   --fallback-font-family: "Helvetica Neue", sans-serif;

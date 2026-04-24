@@ -195,6 +195,7 @@ class BookmarkItem:
 
 class BookmarkListContext:
     request_context = RequestContext
+    show_decorated_heading = False
 
     def __init__(self, request: HttpRequest, search: BookmarkSearch) -> None:
         request_context = self.request_context(request)
@@ -220,6 +221,7 @@ class BookmarkListContext:
         self.is_empty = paginator.count == 0
         self.bookmarks_page = bookmarks_page
         self.bookmarks_total = paginator.count
+        self.heading_counter_label = "link" if self.bookmarks_total == 1 else "links"
 
         self.return_url = request_context.index()
         self.action_url = request_context.action()
@@ -270,6 +272,7 @@ class ActiveBookmarkListContext(BookmarkListContext):
     bulk_edit_enabled = True
     bulk_edit_disabled_actions = "bulk_unarchive"
     request_context = ActiveBookmarksContext
+    show_decorated_heading = True
 
 
 class ArchivedBookmarkListContext(BookmarkListContext):

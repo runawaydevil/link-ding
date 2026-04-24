@@ -677,3 +677,16 @@ class BookmarkSharedViewTestCase(
         soup = self.make_soup(html)
         tag_menu = soup.find(attrs={"aria-label": "Tags menu"})
         self.assertIsNone(tag_menu)
+
+    def test_shared_heading_remains_plain_without_counter(self):
+        self.authenticate()
+        user = self.setup_user(enable_sharing=True)
+        self.setup_numbered_bookmarks(2, shared=True, user=user)
+        response = self.client.get(reverse("linkding:bookmarks.shared"))
+        soup = self.make_soup(response.content.decode())
+
+        heading = soup.select_one("#main-heading")
+        self.assertIsNotNone(heading)
+        self.assertEqual(heading.text.strip(), "Shared bookmarks")
+        self.assertIsNone(soup.select_one("#main-heading.section-title-decorated"))
+        self.assertIsNone(soup.select_one(".section-title-count"))
